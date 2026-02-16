@@ -13,12 +13,7 @@
   height: 100%;
   width: 100%;
   margin: auto;
-  /* padding-top: clamp(20px, 6.3%, 121px);
-  padding-bottom: clamp(20px, 6.3%, 121px);
-  padding-right: clamp(16px, 5.05%, 96px);
-  padding-left: clamp(16px, 5.05%, 96px);  */
 }
-
 
 .homeComponent .image1 {
   grid-column: 1 / 3;
@@ -75,98 +70,6 @@
   grid-row: 2 / 3;
 }
 
-
-
-/* 
-.homeComponent .column1 {
-    display:flex;
-    flex-direction: column;                              
-    align-items: flex-end;
-    padding-right: 8px;
-}
-.homeComponent .image1 {
-    padding-bottom: 8px;
-    width: 100%;
-    height: 100%;
-}
-
-.homeComponent .image2 {
-    max-width: 50%;    
-    padding-top: 8px;
-    padding-left: 8px;
-    
-}
-
-.homeComponent .column2 {
-    display: flex;
-    flex-direction: column;     
-    padding: 0 8px;
-}
-.homeComponent .image3 {        
-    padding-bottom: 8px;
-}
-.homeComponent .image4 {   
-    padding-top: 8px;
-}
-
-.homeComponent .column3 {
-    display:flex;
-    flex-direction: column;     
-    padding: 0 8px;
-}
-.homeComponent .column3 .row {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 8px;
-}
-.homeComponent .image5 {
-    max-width: 50%;    
-    padding-right: 8px;
-}
-.homeComponent .image6 {
-    max-width: 50%;    
-    padding-left: 8px;
-}
-.homeComponent .image7 {    
-    padding-top: 8px;
-}
-
-.homeComponent .column4 {
-    display:flex;
-    flex-direction: column;        
-    padding: 0 8px;
-}
-.homeComponent .image8 {    
-    padding-bottom: 8px;
-}
-.homeComponent .column4 .row {
-    display: flex;
-    flex-direction: row;
-    padding-top: 8px;
-}
-.homeComponent .image9 {
-    max-width: 50%;  
-    padding-right: 8px;
-}
-.homeComponent .image10 {
-    max-width: 50%;  
-    padding-left: 8px;
-}
-.homeComponent .column5 {
-    display:flex;
-    flex-direction: column;
-    padding-left: 8px;
-}
-.homeComponent .column5 .row1 {
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 67.1%;
-}
-.homeComponent .image11 {
-    padding-bottom: 8px;
-} */
-
 header {
   display: flex;
   flex-direction: column;
@@ -174,7 +77,7 @@ header {
   -o-box-shadow: 15px 5px 30px 1px rgba(0, 0, 0, 0.31);
   -webkit-box-shadow: 15px 5px 30px 1px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: 15px 5px 30px 1px rgba(0, 0, 0, 0.31);
-  box-shadow: 15px 5px 30px 1px rgba(0, 0, 0, 0.31);  
+  box-shadow: 15px 5px 30px 1px rgba(0, 0, 0, 0.31);
 }
 
 header .header {
@@ -184,7 +87,7 @@ header .topNav {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #ffffff;  
+  background-color: #ffffff;
   padding: 0px 76px 0px 238px;
 }
 
@@ -237,7 +140,6 @@ header .rightHeader {
   min-height: calc(100vh - 200px);
 }
 
-
 div.linkComponent {
   max-width: 100%;
   min-width: unset;
@@ -279,7 +181,6 @@ figure figcaption {
   position: relative;
 }
 
-
 .topNav .menus > .menu-item > .dropdown.level-1 {
   flex-direction: column;
   width: max-content;
@@ -290,8 +191,6 @@ figure figcaption {
   padding: 30px;
 }
 
-/* Bitzet custom li markers */
-
 .description li {
   margin-left: 18px;
 }
@@ -300,7 +199,6 @@ figure figcaption {
   list-style-type: "// ";
 }
 
-/* Responsive Global */
 @media only screen and (max-width: 1440px) {
 
   .bannerSection .customHeadlineArrows {
@@ -375,14 +273,14 @@ figure figcaption {
   .leftNavPage .leftHandNav {
     height: calc(100vh - 148px) !important;
   }
-  
+
   .leftNavPage .leftHandNav, .pageContainer {
     min-height: calc(100vh - 148px) !important;
     top: 148px !important;
   }
 
 }
-/* Mozila Firefox Fixes */
+
 h1 {
   display: flex;
 }

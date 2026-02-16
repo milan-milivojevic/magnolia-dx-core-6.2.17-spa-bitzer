@@ -15,7 +15,6 @@ console.log(selectedKeywords);
   const [filterValue, setFilterValue] = useState('');
   const [tempParents, setTempParents] = useState([]);
 
-  /* Dohvatanje Filtera */
   useEffect(() => {
     const requestOptions = {
       method: 'POST',
@@ -27,7 +26,6 @@ console.log(selectedKeywords);
       .then((response) => response.json())
       .then((data) => {
       const countData = data;
-        // Store the countResponseData and fetch the keywords
         return { countData, fetchPromise: fetch("https://www.bitzer-marketing-portal.com/rest/mp/v1.2/keywords") };
       })
       .then(async ({ countData, fetchPromise }) => {
@@ -54,14 +52,12 @@ console.log(selectedKeywords);
         id: item.id,
         label: item.name.EN || item.name.DE,
         value: item.id.toString(),
-        count: 0, // default count
-        isChecked: selectedKeywords?.includes(item.id.toString()) // Check if the ID exists in the selectedKeywords
+        count: 0,
+        isChecked: selectedKeywords?.includes(item.id.toString())
       };
-  
-      // Find the matching group from the POST request response
+
       const matchingGroup = countGroups?.find(group => parseInt(group.group) === item.id);
-      
-      // If a matching group is found, update the count
+
       if (matchingGroup) {
         mappedItem.count = matchingGroup.count;
       }
@@ -69,7 +65,6 @@ console.log(selectedKeywords);
       return mappedItem;
     });
 
-    // Sortiranje stavki po atributu count od najveće do najmanje vrednosti
     return mappedItems.sort((a, b) => b.count - a.count);
   };
 
@@ -98,7 +93,7 @@ console.log(selectedKeywords);
     const values = [];
     
     parents.forEach(parent => {      
-      if (parent.isChecked) { // Ako nisu svi childovi selektovani, dodajemo vrednosti childova pojedinačno
+      if (parent.isChecked) {
         values.push(parent.value);
       }
     });
@@ -106,8 +101,6 @@ console.log(selectedKeywords);
     onUpdateSelectedKeywords(values);
     setIsFilterOpen(false);
   };
-
-  /* Restartovanje stanja svih Checkboxova */
 
   const clearAll = () => {
     setParents(initialParents.map(parent => {     

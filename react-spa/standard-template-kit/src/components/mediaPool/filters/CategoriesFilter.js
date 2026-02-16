@@ -12,7 +12,6 @@ export default function CategoriesFilter({onUpdateSelectedCategories, selectedCa
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [tempParents, setTempParents] = useState([]);
 
-  /* Dohvatanje Filtera */
   useEffect(() => {
     fetch("https://www.bitzer-marketing-portal.com/rest/mp/v1.2/themes")
       .then((response) => response.json())
@@ -22,7 +21,7 @@ export default function CategoriesFilter({onUpdateSelectedCategories, selectedCa
         setInitialParents(transformedParents);
       })
       .catch((error) => {
-        console.error("Greška prilikom preuzimanja podataka:", error);
+        console.error("Error while fetching data:", error);
       });
   }, [selectedCategories]);
 
@@ -46,8 +45,6 @@ export default function CategoriesFilter({onUpdateSelectedCategories, selectedCa
   const mapData = (data) => {
     return mapItems(data);
   };
-  
-  /* Otvaranje Filtera i Dropdowna  */
 
   const extractCheckStates = (items) => {
     return items.map(item => {
@@ -107,8 +104,6 @@ export default function CategoriesFilter({onUpdateSelectedCategories, selectedCa
       return parent;
     }));
   };
-
-  /* Hendlovanje promena stanja Checkbox-ova */
 
   const toggleParentCheckbox = (parentId) => {
     setParents(prevState => prevState.map(parent => {
@@ -221,8 +216,6 @@ export default function CategoriesFilter({onUpdateSelectedCategories, selectedCa
     }));
   };
 
-  /* Pakovanje selektovanih vrednosti u niz i zatvaranje filtera */
-  
   const applySelection = () => {
     const values = [];
 
@@ -254,8 +247,6 @@ export default function CategoriesFilter({onUpdateSelectedCategories, selectedCa
     setIsFilterOpen(false);
   };
 
-  /* Restartovanje stanja svih Checkboxova */
-
   const clearAll = () => {
     setParents(initialParents.map(parent => {     
       parent.isChecked = false;
@@ -271,8 +262,6 @@ export default function CategoriesFilter({onUpdateSelectedCategories, selectedCa
       return parent;
     }));
   };
-
-  /* Zatvaranje Filtera */
 
   const resetCheckStates = (items, tempStates) => {
     return items.map((item, index) => {

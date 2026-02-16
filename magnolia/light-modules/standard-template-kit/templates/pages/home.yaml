@@ -1,7 +1,5 @@
 title: Home Page
 
-# baseUrl: http://localhost:3000
-# routeTemplate: '/{language}{{@path}}'
 templateScript: /standard-template-kit/webresources/build/index.html
 
 dialog: standard-template-kit:pages/home
@@ -14,5 +12,3 @@ areas:
     availableComponents:
       homeComponent:
         id: standard-template-kit:components/custom/homeCustomComponent
-
-

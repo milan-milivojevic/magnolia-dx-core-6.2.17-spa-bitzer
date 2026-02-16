@@ -1,7 +1,3 @@
-// useHashScroll.js – v7‑debug‑retry
-// - Dva pokušaja skrolovanja: odmah + 150 ms kasnije (layout‑shift fallback)
-// - Dodatni logovi da se vidi realan getBoundingClientRect().top pre/posle.
-// ---------------------------------------------------------------------------
 import { useEffect, useRef, useState } from "react";
 
 function waitForImages(root) {
@@ -79,10 +75,8 @@ export default function useHashScroll(rootRef, { offset = 0, behavior = "smooth"
       await waitForImages(rootEl);
 
       requestAnimationFrame(() => {
-        // Pokušaj 1
         scrollToTarget(target, 1);
 
-        // Pokušaj 2 – nakon 150 ms da uhvati eventualni layout‑shift
         setTimeout(() => {
           const dist = target.getBoundingClientRect().top - offset;
           console.log("[useHashScroll] after 150ms target top:", dist);

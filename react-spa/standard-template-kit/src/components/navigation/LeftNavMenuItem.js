@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import LeftNavDropdown from "./LeftNavDropdown";
 import { getAPIBase } from "../../helpers/AppHelpers";
-// import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { aclCheck } from '../../helpers/ACL';
 
 import {events, getRouterBasename} from "../../helpers/AppHelpers";
@@ -16,13 +15,11 @@ function LeftNavMenuItem({item, itemIndex, depthLevel}) {
   const editMode = isPagesApp ? true : false;
 
   const [dropdown, setDropdown] = useState(false);
-  // const [activeLink, setActiveLink] = useState(null);
-  
+
   let ref = useRef();
 
   useEffect(() => {
     const handler = (event) => {
-        //Remove the esclamation mark in front of !ref.current to close the open levels
         if (dropdown && !ref.current && !ref.current.contains(event.target)) {
             setDropdown(false);
         }
@@ -30,7 +27,6 @@ function LeftNavMenuItem({item, itemIndex, depthLevel}) {
     document.addEventListener("mousedown", handler);
     document.addEventListener("touchstart", handler);
     return () => {
-        // Cleanup the event listener
         document.removeEventListener("mousedown", handler);
         document.removeEventListener("touchstart", handler);
     };
@@ -51,7 +47,7 @@ function LeftNavMenuItem({item, itemIndex, depthLevel}) {
             setAclValue(response); 
           })
           .catch((error) => {
-            console.error("Greška prilikom izvršavanja aclCheck:", error);
+            console.error("Error executing aclCheck:", error);
             setAclValue(false);
           });
       } else setAclValue(true);
@@ -65,9 +61,6 @@ if (item.hide !== ("true" || true)) {
   return (
     <li className={`menu-item level-${depthLevel} hideInNav-${item.hide}`}
         ref={ref}
-        // Uncomment 2 lines below if you want to open levels on hover
-        // onMouseEnter={onMouseEnter}
-        // onMouseLeave={onMouseLeave} 
     >
     {item.children && item.children.length !== 0 ? ( 
           <React.Fragment>
@@ -78,7 +71,7 @@ if (item.hide !== ("true" || true)) {
                 <a href={(getRouterBasename() + item.path.replace(process.env.REACT_APP_MGNL_APP_BASE, "")).replace("//", "/")} 
                   key={itemIndex} 
                   onClick={(e) => {      
-                    const currentURL = window.location.href; // Get the complete URL
+                    const currentURL = window.location.href;
                     const hash = window.location.hash;      
                     const urlWithoutHash = currentURL.replace(hash, '');
                     const baseURL = process.env.REACT_APP_MGNL_APP_HOST; 
@@ -87,36 +80,17 @@ if (item.hide !== ("true" || true)) {
                     if ( item.componentId !== undefined && currentURL === itemHashPath ) {
                       e.preventDefault();                
                       window.location.hash = item.componentId;
-                      // const navLinks = document.querySelectorAll('.leftHandNav .menu-item  button  a');
-                      // navLinks.forEach((navLink) => {
-                      //   navLink.classList.remove('active');
-                      // });
-                      // e.target.classList.add('active');
                     } else if ( item.componentId !== undefined && urlWithoutHash === itemPath ) {
                       e.preventDefault();                
                       window.location.hash = item.componentId;
                       window.scrollBy(0, -250);
-                      // const navLinks = document.querySelectorAll('.leftHandNav .menu-item  button  a');
-                      // navLinks.forEach((navLink) => {
-                      //   navLink.classList.remove('active');
-                      // });
-                      // e.target.classList.add('active');
                     } else {
                       e.preventDefault();
                       window.history.pushState({}, "", e.currentTarget.href);
                       window.scrollTo(0, 0);
                       events.emit("popstate");
-                      // setActiveLink(itemIndex);
-                      // const navLinks = document.querySelectorAll('.leftHandNav .menu-item  button  a');
-                      // navLinks.forEach((navLink) => {
-                      //   navLink.classList.remove('active');
-                      // });
-                      // e.target.classList.add('active');
                     }
                   }}               
-                  //  className={
-                  //   (itemIndex === activeLink ? " active_item" : "")
-                  // }
                 >  
                   {item.name}               
                 </a> 
@@ -134,7 +108,7 @@ if (item.hide !== ("true" || true)) {
             <a href={(getRouterBasename() + item.path.replace(process.env.REACT_APP_MGNL_APP_BASE, "")).replace("//", "/")}
               key={itemIndex} 
               onClick={(e) => {      
-                const currentURL = window.location.href; // Get the complete URL
+                const currentURL = window.location.href;
                 const hash = window.location.hash;      
                 const urlWithoutHash = currentURL.replace(hash, '');
                 const baseURL = process.env.REACT_APP_MGNL_APP_HOST; 
@@ -143,36 +117,17 @@ if (item.hide !== ("true" || true)) {
                 if ( item.componentId !== undefined && currentURL === itemHashPath ) {
                   e.preventDefault();                
                   window.location.hash = item.componentId;
-                  // const navLinks = document.querySelectorAll('.leftHandNav .menu-item  button  a');
-                  // navLinks.forEach((navLink) => {
-                  //   navLink.classList.remove('active');
-                  // });
-                  // e.target.classList.add('active');
                 } else if ( item.componentId !== undefined && urlWithoutHash === itemPath ) {
                   e.preventDefault();                
                   window.location.hash = item.componentId;
                   window.scrollBy(0, -250);
-                  // const navLinks = document.querySelectorAll('.leftHandNav .menu-item  button  a');
-                  // navLinks.forEach((navLink) => {
-                  //   navLink.classList.remove('active');
-                  // });
-                  // e.target.classList.add('active');
                 } else {
                   e.preventDefault();
                   window.history.pushState({}, "", e.currentTarget.href);
                   window.scrollTo(0, 0);
                   events.emit("popstate");
-                  // const navLinks = document.querySelectorAll('.leftHandNav .menu-item  button  a');
-                  // navLinks.forEach((navLink) => {
-                  //   navLink.classList.remove('active');
-                  // });
-                  // e.target.classList.add('active');
-                  // setActiveLink(itemIndex);
                 }
               }}
-              // className={
-              //   (itemIndex === activeLink ? "active" : "")
-              // }
             >  
               {item.name} 
             </a>

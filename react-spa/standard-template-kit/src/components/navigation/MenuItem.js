@@ -26,7 +26,6 @@ function MenuItem({item, itemIndex, depthLevel}) {
     document.addEventListener("mousedown", handler);
     document.addEventListener("touchstart", handler);
     return () => {
-        // Cleanup the event listener
         document.removeEventListener("mousedown", handler);
         document.removeEventListener("touchstart", handler);
     };
@@ -47,7 +46,7 @@ function MenuItem({item, itemIndex, depthLevel}) {
           setAclValue(response); 
         })
         .catch((error) => {
-          console.error("Greška prilikom izvršavanja aclCheck:", error);
+          console.error("Error executing aclCheck:", error);
           setAclValue(false);
         });
     } else setAclValue(true);
@@ -61,7 +60,6 @@ function MenuItem({item, itemIndex, depthLevel}) {
     return (
       <li className={`menu-item level-${depthLevel} hideInNav-${item.hide}`}
           ref={ref}
-          // Uncomment 2 lines below if you want to open levels on hover
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave} 
       >
@@ -83,7 +81,6 @@ function MenuItem({item, itemIndex, depthLevel}) {
                 >  
                   {item.name}
                   {" "} 
-                  {/* {depthLevel > 0 ? < span > &raquo; </span> : <span className="arrow" />}  */}
                 </a>            
               </button> 
               <Dropdown depthLevel={depthLevel}

@@ -12,7 +12,6 @@ export default function FileInfoFilter({onUpdateSelectedSuffixes, selectedSuffix
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [tempParents, setTempParents] = useState([]);
 
-  /* Dohvatanje Filtera */
   useEffect(() => {
     fetch("https://www.bitzer-marketing-portal.com/rest/mp/v1.1/suffixes")
       .then((response) => response.json())
@@ -22,11 +21,9 @@ export default function FileInfoFilter({onUpdateSelectedSuffixes, selectedSuffix
         setInitialParents(transformedParents);
       })
       .catch((error) => {
-        console.error("Greška prilikom preuzimanja podataka:", error);
+        console.error("Error while fetching data:", error);
       });
   }, [selectedSuffixes]);
-
-  /*Mapiranje Filtera*/
 
   const mapData = (data) => {
     return data.map(item => {
@@ -34,7 +31,7 @@ export default function FileInfoFilter({onUpdateSelectedSuffixes, selectedSuffix
         id: item.name,
         label: item.label,
         children: item.suffixes.map((suffix, index) => ({
-          id: index + 1, // Ovde koristimo index za ID deteta, ali možete koristiti bilo koju logiku koja vam odgovara
+          id: index + 1,
           label: suffix,
           value: suffix,
           isChecked: selectedSuffixes?.includes(suffix.toString())
@@ -43,9 +40,6 @@ export default function FileInfoFilter({onUpdateSelectedSuffixes, selectedSuffix
       return mappedItem;
     });
   };
-
-
-  /* Otvaranje Filtera i Dropdowna  */
 
   const extractCheckStates = (items) => {
     return items.map(item => {
@@ -74,8 +68,6 @@ export default function FileInfoFilter({onUpdateSelectedSuffixes, selectedSuffix
       });
     });
   };
-
-  /* Hendlovanje promena stanja Checkbox-ova */
 
   const toggleParentCheckbox = (parentId) => {
     setParents((prevState) => {
@@ -109,9 +101,7 @@ export default function FileInfoFilter({onUpdateSelectedSuffixes, selectedSuffix
     });
   };  
 
-   /* Pakovanje selektovanih vrednosti u niz i zatvaranje filtera */
-
-  const applySelection = () => {
+   const applySelection = () => {
     const values = [];
     parents.forEach(parent => {
       parent.children.forEach(child => {
@@ -124,8 +114,6 @@ export default function FileInfoFilter({onUpdateSelectedSuffixes, selectedSuffix
     onUpdateSelectedSuffixes(values);
     setIsFilterOpen(false);
   };
-
-  /* Restartovanje stanja svih Checkboxova */
 
   const clearAll = () => {
     setParents(initialParents.map(parent => {     
