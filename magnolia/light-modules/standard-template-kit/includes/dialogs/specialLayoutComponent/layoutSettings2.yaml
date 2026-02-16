@@ -6,8 +6,4 @@ itemProvider:
   $type: currentItemProvider
 properties:
   descLinkVerticalPosition: !include:/standard-template-kit/includes/dialogs/specialLayoutComponent/verticalPosition.yaml
-  linkPosition: !include:/standard-template-kit/includes/dialogs/specialLayoutComponent/linkPosition.yaml  
-  # linkWrapperHeight: 
-  #   label: Link Wrapper Height
-  #   placeholder: 100% or 60px or auto
-  #   $type: textField
+  linkPosition: !include:/standard-template-kit/includes/dialogs/specialLayoutComponent/linkPosition.yaml
