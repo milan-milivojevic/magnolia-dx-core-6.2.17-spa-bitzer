@@ -33,9 +33,7 @@ function CarouselConfig ({
   styleName
 }) {
 
-  const id = useId(); 
-  // const [isAutoSliding, setIsAutoSliding] = useState(true);
-
+  const id = useId();
 
   const myRef = useRef(null);
   const handleClick = () => {
@@ -73,23 +71,12 @@ function CarouselConfig ({
     setActiveIndicatorIndex(slideIndex);
   };
 
-  // Function to start auto-sliding
-  // const startAutoSlide = () => {
-  //   setIsAutoSliding(true);
-  // };
-
-  // Function to stop auto-sliding
-  // const stopAutoSlide = () => {
-  //   setIsAutoSliding(false);
-  // };
-
-  // Auto-slide effect
   useEffect(() => {
     let interval;
     if (carouselAutoplay === true || carouselAutoplay === "true") {
       interval = setInterval(() => {
         goToNext();
-      }, 3000); // 3000ms = 3 seconds
+      }, 3000);
     }
 
     return () => {
@@ -167,10 +154,7 @@ function CarouselConfig ({
   }
   
   return (
-    <div className='carouselWrapper configComponents'
-      // onMouseEnter={stopAutoSlide}  // Pause on hover
-      // onMouseLeave={startAutoSlide} // Resume on mouse leave
-    >
+    <div className='carouselWrapper configComponents'>
       <div className="copyStyleName">
         <h4>Style Name: <span className="copyText" ref={myRef}>{styleName || null}</span></h4>
         <button onClick={handleClick}>
