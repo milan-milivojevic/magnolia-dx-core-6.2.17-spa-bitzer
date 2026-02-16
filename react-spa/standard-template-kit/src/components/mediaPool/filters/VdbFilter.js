@@ -11,7 +11,6 @@ export default function VdbFilter({onUpdateSelectedVdbs, selectedVdbs}) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [tempParents, setTempParents] = useState([]);
 
-  /* Dohvatanje Filtera */
   useEffect(() => {
     fetch("https://www.bitzer-marketing-portal.com/rest/mp/v1.1/virtual-databases")
       .then((response) => response.json())
@@ -21,7 +20,7 @@ export default function VdbFilter({onUpdateSelectedVdbs, selectedVdbs}) {
         setInitialParents(transformedParents);
       })
       .catch((error) => {
-        console.error("Greška prilikom preuzimanja podataka:", error);
+        console.error("Error while fetching data:", error);
       });
   }, [selectedVdbs]);
 
@@ -61,7 +60,7 @@ export default function VdbFilter({onUpdateSelectedVdbs, selectedVdbs}) {
     const values = [];
     
     parents.forEach(parent => {      
-      if (parent.isChecked) { // Ako nisu svi childovi selektovani, dodajemo vrednosti childova pojedinačno
+      if (parent.isChecked) {
         values.push(parent.value);
       }
     });
@@ -69,8 +68,6 @@ export default function VdbFilter({onUpdateSelectedVdbs, selectedVdbs}) {
     onUpdateSelectedVdbs(values);
     setIsFilterOpen(false);
   };
-
-  /* Restartovanje stanja svih Checkboxova */
 
   const clearAll = () => {
     setParents(initialParents.map(parent => {     
