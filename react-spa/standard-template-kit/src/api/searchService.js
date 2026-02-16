@@ -291,10 +291,10 @@ export const assetRelationsService = async (assetId) => {
     console.log(relationsArray);
   
     const relationsArrayUniqueIds = relationsArray.relations
-      .map(item => item.relatedAssetId) // Prvo izvlačimo samo relatedAssetId
+      .map(item => item.relatedAssetId)
       .reduce((unique, item) => {
         return unique.includes(item) ? unique : [...unique, item];
-      }, []); // Onda koristimo reduce da uklonimo duplikate
+      }, []);
 
      
   
@@ -322,17 +322,7 @@ export const assetRelationsService = async (assetId) => {
     return relatedAssets;
 
   } catch (error) {
-    // Handle error appropriately
     console.error(error);
     return null;
   }
 };
-
-
-
-// export const getApiBearerToken = () => apiServiceHandler(`${BASE_URL}/rest/sso/auth/jaas/jwt`);
-// const token = await getApiBearerToken();
-// headers: {
-//   "Authorization": `Bearer ${token.access_token}`,
-//   "Content-Type": "application/json"
-// },
