@@ -1,0 +1,99 @@
+@charset 'UTF-8';
+
+@font-face {
+  font-family: 'Sohne Buch';
+  src: url("../fonts/SohneApp-Buch/soehne-web-buch.eot");
+  src: url("../fonts/SohneApp-Buch/soehne-web-buch.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SohneApp-Buch/soehne-web-buch.woff") format("woff"),
+    url("../fonts/SohneApp-Buch/soehne-app-buch.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sohne Buch Kursiv';
+  src: url("../fonts/SohneApp-BuchKursiv/soehne-web-buch-kursiv.eot");
+  src: url("../fonts/SohneApp-BuchKursiv/soehne-web-buch-kursiv.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SohneApp-BuchKursiv/soehne-web-buch-kursiv.woff") format("woff"),
+    url("../fonts/SohneApp-BuchKursiv/soehne-app-buch-kursiv.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sohne Halbfett';
+  src: url("../fonts/SohneApp-Halbfett/soehne-web-halbfett.eot");
+  src: url("../fonts/SohneApp-Halbfett/soehne-web-halbfett.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SohneApp-Halbfett/soehne-web-halbfett.woff") format("woff"),
+    url("../fonts/SohneApp-Halbfett/soehne-app-halbfett.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sohne Halbfett Kursiv';
+  src: url("../fonts/SohneApp-HalbfettKursiv/soehne-web-halbfett-kursiv.eot");
+  src: url("../fonts/SohneApp-HalbfettKursiv/soehne-web-halbfett-kursiv.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SohneApp-HalbfettKursiv/soehne-web-halbfett-kursiv.woff") format("woff"),
+    url("../fonts/SohneApp-HalbfettKursiv/soehne-app-halbfettKursiv.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sohne Schmal Halbfet';
+  src: url("../fonts/SohneDGAppSchmal-Halbfett/soehnedg-web-schmal-halbfett.eot");
+  src: url("../fonts/SohneDGAppSchmal-Halbfett/soehnedg-web-schmal-halbfett.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SohneDGAppSchmal-Halbfett/soehnedg-web-schmal-halbfett.woff") format("woff"),
+    url("../fonts/SohneDGAppSchmal-Halbfett/soehnedg-app-schmal-halbfett.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: AFDiwa;
+  src: url('../fonts/webfonts/AFDiwa.eot');
+  src: url('../fonts/webfonts/AFDiwa.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/webfonts/AFDiwa.woff') format('woff'), 
+  url('../fonts/webfonts/AFDiwa.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: AFDiwaLight;
+  src: url('../fonts/webfonts/286144_1_0.eot');
+  src: url('../fonts/webfonts/286144_1_0.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/webfonts/286144_1_0.woff') format('woff'),
+  url('../fonts/webfonts/286144_1_0.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: AFDiwaExtraLight;
+  src: url('../fonts/webfonts/AFDiwaExtraLight.eot');
+  src: url('../fonts/webfonts/AFDiwaExtraLight.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/webfonts/AFDiwaExtraLight.woff') format('woff'), 
+  url('../fonts/webfonts/AFDiwaExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: AFDiwaBold;
+  src: url('../fonts/webfonts/286144_0_0.eot');
+  src: url('../fonts/webfonts/286144_0_0.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/webfonts/286144_0_0.woff') format('woff'), 
+  url('../fonts/webfonts/286144_0_0.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: AFDiwaExtraBold;
+  src: url('../fonts/webfonts/AFDiwaExtraBold.eot');
+  src: url('../fonts/webfonts/AFDiwaExtraBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/webfonts/AFDiwaExtraBold.woff') format('woff'), 
+  url('../fonts/webfonts/AFDiwaExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: ArialBold;
+  src: url('../fonts/webfonts/arialbd.eot');
+  src: url('../fonts/webfonts/arialbd.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/webfonts/arialbd.woff') format('woff'), 
+  url('../fonts/webfonts/arialbd.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: TahomaBold;
+  src: url('../fonts/webfonts/tahomabd.eot');
+  src: url('../fonts/webfonts/tahomabd.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/webfonts/tahomabd.woff') format('woff'), 
+  url('../fonts/webfonts/tahomabd.ttf') format('truetype');
+}

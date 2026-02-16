@@ -1,0 +1,85 @@
+{
+  "searchSchemaId": "asset",
+  "lang": "DE",
+  "output": {
+      "aggregates": {
+          "suggest": {
+              "@type": "groups",
+              "field": "value_multi",
+              "includeRegex": "\\Qtest\\E.*",
+              "orderAsc": false
+          }
+      }
+  },
+  "criteria": {
+      "@type": "and",
+      "subs": [
+          {
+              "@type": "exact_match",
+              "fields": [
+                  "value_multi"
+              ],
+              "value": ""
+          },
+          {
+              "@type": "and",
+              "subs": [
+                  {
+                      "@type": false,
+                      "fields": [
+                          "isVariant"
+                      ]
+                  },
+                  {
+                      "@type": "not",
+                      "criteria": {
+                          "@type": "eq",
+                          "fields": [
+                              "vdb.id"
+                          ],
+                          "long_value": 3
+                      }
+                  }
+              ]
+          },
+          {
+              "@type": "in",
+              "fields": [
+                  "extension"
+              ],
+              "text_value": [
+                  "ai",
+                  "bmp",
+                  "eps",
+                  "gif",
+                  "jpg/jpeg",
+                  "png",
+                  "psd",
+                  "svg",
+                  "tif/tiff",
+                  "wmf",
+                  "flv",
+                  "mp4",
+                  "mpg/mpeg",
+                  "wmv",
+                  "doc",
+                  "docx",
+                  "dotx",
+                  "html",
+                  "idml",
+                  "indd",
+                  "pdf",
+                  "potx",
+                  "ppt",
+                  "pptx",
+                  "swf",
+                  "xls",
+                  "xlsx",
+                  "xltx",
+                  "txt",
+                  "zip"
+              ]
+          }
+      ]
+  }
+}

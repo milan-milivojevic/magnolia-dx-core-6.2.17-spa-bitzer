@@ -1,0 +1,3 @@
+class: info.magnolia.module.cache.filter.CacheFilter
+defaultContentCachingConfigurationName: defaultPageCache
+enabled: true

@@ -1,0 +1,11 @@
+cachePolicy:
+  class: info.magnolia.module.cache.cachepolicy.Default
+  cacheKeyGenerator:
+    class: info.magnolia.module.cache.cachekey.DefaultCacheKeyGenerator
+    # opcionalno, stabilniji ključ bez query stringa:
+    useRequestParameters: false
+
+executors:
+  store:
+    cacheContent:
+      class: info.magnolia.module.cache.executor.Store

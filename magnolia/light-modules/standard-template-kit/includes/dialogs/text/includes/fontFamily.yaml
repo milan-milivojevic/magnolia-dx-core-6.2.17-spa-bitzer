@@ -1,0 +1,50 @@
+label: Font Family
+$type: comboBoxField
+datasource:
+  $type: optionListDatasource
+  options:
+    - name: default
+      value: default
+      label: default
+    # - name: Sohne Buch
+    #   value: Sohne Buch
+    #   label: Sohne Buch
+    # - name: Sohne Buch Kursiv
+    #   value: Sohne Buch Kursiv
+    #   label: Sohne Buch Kursiv
+    # - name: Sohne Halbfett
+    #   value: Sohne Halbfett
+    #   label: Sohne Halbfett
+    # - name: Sohne Halbfett Kursiv
+    #   value: Sohne Halbfett Kursiv
+    #   label: Sohne Halbfett Kursiv
+    # - name: Sohne Schmal Halbfett
+    #   value: Sohne Schmal Halbfett
+    #   label: Sohne Schmal Halbfett
+    - name: AFDiwa
+      value: AFDiwa
+      label: AFDiwa
+    - name: AFDiwaLight
+      value: AFDiwaLight
+      label: AFDiwaLight
+    - name: AFDiwaExtraLight
+      value: AFDiwaExtraLight
+      label: AFDiwaExtraLight   
+    - name: AFDiwaBold
+      value: AFDiwaBold
+      label: AFDiwaBold
+    - name: AFDiwaExtraBold
+      value: AFDiwaExtraBold
+      label: AFDiwaExtraBold
+    - name: Tahoma
+      value: Tahoma
+      label: Tahoma
+    - name: TahomaBold
+      value: TahomaBold
+      label: TahomaBold
+    - name: Arial
+      value: Arial
+      label: Arial
+    - name: ArialBold
+      value: ArialBold
+      label: ArialBold

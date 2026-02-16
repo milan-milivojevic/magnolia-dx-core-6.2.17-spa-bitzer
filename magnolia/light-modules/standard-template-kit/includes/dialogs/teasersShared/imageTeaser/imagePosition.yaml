@@ -1,0 +1,9 @@
+label: Image Position
+$type: compositeField
+layout:
+  $type: horizontal
+itemProvider:
+  $type: currentItemProvider
+properties:
+  imagePosition: !include:/standard-template-kit/includes/dialogs/basics/positions/containPosition.yaml
+      
