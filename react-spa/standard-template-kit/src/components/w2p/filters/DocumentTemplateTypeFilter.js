@@ -17,12 +17,11 @@ export default function DocumentTemplateTypeFilter({ onUpdateSelectedTemplateTyp
         const transformedParents = mapData(JSON.parse(templateTypeObject.options));
         setParents(transformedParents);
 
-        // After setting the parents, also set the correct selected option based on prop
         const correspondingSelected = transformedParents.find(parent => parent.value === selectedTemplateType);
         setSelectedOption(correspondingSelected || null);
       })
       .catch((error) => {
-        console.error("Greška prilikom preuzimanja podataka:", error);
+        console.error("Error while fetching data:", error);
       });
   }, [selectedTemplateType]);
 
